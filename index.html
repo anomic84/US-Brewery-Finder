@@ -13,31 +13,40 @@
 
 <body>
     <nav class="border border-yellow-500  w-full p-4 bg-blue-500">
-        <h1 class="text-black text-center ">Seattle Bakery Finder</h1>
+        <h1 class="text-black text-center ">US Bakery Finder</h1>
     </nav>
     <!-- whole dive under nav -->
-    <div class="containter grid grid-cols-2 gap-3">
+    <div class="containter grid grid-cols-2 ">
         <!-- search column -->
-        <div class="container border border-green-500">
+        <div class="container ">
             <!-- search bar -->
-            <div class="container border border-blue-500">
-                <button>search</button>
+            <div class="container grid grid-row-2 rounded">
+                <div>
+                    <label for="city_search" class="text-gray-400 pl-1 ">Search a City</label>
+                    <input type="text" name="" id="city_search" class="pt-5 pb-2">
+                </div>
+                <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-500 px-4 py-2 rounded">search</button>
             </div>
-            <!-- searched history -->
-            <div class="container border border-pink-500">
-                <p>THIS SHOULD BE SEARCHED HISTORY THIS SHOULD BE SEARCHED HISTORY THIS SHOULD BE SEARCHED HISTORY THIS
-                    SHOULD BE SEARCHED HISTORY</p>
+            <!-- Filter -->
+            <div class="container">
+                <p>FILTER Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, ab tempora quaerat libero
+                    non iusto. Nisi nam dolorem doloribus architecto inventore reprehenderit ab vero non repellat
+                    veritatis delectus quasi provident sequi commodi, veniam obcaecati possimus laboriosam esse
+                    excepturi! Tempore aspernatur illo ducimus nisi veniam quod totam qui recusandae nam enim.
+                </p>
             </div>
+           
         </div>
         <!-- information and map column -->
-        <div class="container border border-green-700 ">
-            <!-- search bar -->
-            <div class="container border border-blue-500">
-                <button>information</button>
-            </div>
+        <div class="container">
+
             <!-- searched history -->
-            <div class="container border border-pink-500">
+            <div class="container">
                 <p>BIG OL MAPPY POO TO LOOK UP THE DANG RESTAURANTS.</p>
+            </div>
+            <!-- search bar -->
+            <div class="container">
+                <h1>information</h1>
             </div>
         </div>
     </div>
