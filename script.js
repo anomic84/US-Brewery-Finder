@@ -1,5 +1,16 @@
-//Yelp Fusion API
+// Consts
+const input = document.getElementById("city-input");
+const search = document.getElementById("search-button");
+// add a clear history button here after we get MVP
 
+
+
+
+
+
+
+
+//Yelp Fusion API
 
 API Key =
 XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx-rlpPg9iEsiwQmaiBTb-HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx

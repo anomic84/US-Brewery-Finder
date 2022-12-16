@@ -23,12 +23,13 @@
             <div class="container grid grid-row-2 border border-black rounded">
                 <div>
                     <label for="city_search" class="text-gray-400 pl-1 ">Search a City</label>
-                    <input type="text" name="" id="city_search" class="pt-5 pb-2">
+                    <input type="text" name="" id="city_input" class="pt-2 pb-2">
                 </div>
-                <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-500 px-4 py-2 rounded">search</button>
+                <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
+                    id="search_button">Search</button>
             </div>
             <!-- search history -->
-            <div class="container">
+            <div class="container" id="search_history">
 
             </div>
 
@@ -38,12 +39,12 @@
         <div class="container col2">
 
             <!-- searched history -->
-            <div class="container">
+            <div class="container maparea" id="map">
                 <p>BIG OL MAPPY POO TO LOOK UP THE DANG RESTAURANTS.</p>
             </div>
-            <!-- search bar -->
-            <div class="container p-4 bg-amber-800 rounded-b-2xl">
-                <h1>information</h1>
+            <!-- search bar (use js to fill in blanks)-->
+            <div class="container p-4 bg-amber-800 rounded" id="store_info">
+
             </div>
         </div>
     </div>
