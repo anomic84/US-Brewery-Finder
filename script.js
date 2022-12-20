@@ -29,15 +29,21 @@ async function fetchData(url) {
 testCall()
 
 // search.addEventListener("click", url);
-//Yelp Fusion API
+Yelp Fusion API
 
-// API Key =
-// XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx-rlpPg9iEsiwQmaiBTb-HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx
+API Key =
+    XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx - rlpPg9iEsiwQmaiBTb - HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx
 
-// curl --request GET \
-//      --url https://api.yelp.com/v3/events/awesome-event \
-//      --header 'Authorization: Bearer API_KEY' \
-//      --header 'accept: application/json'
+curl--request GET \
+--url https://api.yelp.com/v3/events/awesome-event \
+--header 'Authorization: Bearer XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx-rlpPg9iEsiwQmaiBTb-HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx' \
+--header 'accept: application/json'
+
+// this *should* be the right search. I've got bakeries set in the call, and than the +city, where city = what user types in search ("catagories" might need to be "term" )
+fetch("https://api.yelp.com/v3/businesses/search?catagories=bakeries&location=" + city)
+.then(response => response.json())
+.then(response => console.log(response))
+.catch(err => console.error(err));
 
 
 
@@ -47,6 +53,14 @@ testCall()
 
 
 
-//Al7OdiPyzEykkQtq9N0tfF2-85LosZCbAMvSxWxZ0nREKBqTififdRTwb_Zai0pK
 
-// https://spatial.virtualearth.net/REST/v1/data/a1b18b9f4d024416afd5643c2e1f6d4e/Bing/FourthCoffeeShops	
+// --------------------Fetch response as written by Yelp--------------------//
+// const options = {
+//     method: 'POST',
+//     headers: {accept: 'application/json', 'content-type': 'application/json'}
+//   };
+  
+//   fetch('https://partner-api.yelp.com/v1/ingest/create', options)
+//     .then(response => response.json())
+//     .then(response => console.log(response))
+//     .catch(err => console.error(err));
