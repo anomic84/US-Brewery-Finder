@@ -8,43 +8,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailsindcss.com"></script>
     <title>Bakery Finder</title>
 </head>
 
 <body>
-    <nav class="container border-yellow-500 w-full p-4 bg-blue-500">
-        <h1 class="text-black object-center">Seattle Bakery Finder</h1>
+    <nav class="border border-yellow-500  w-full p-4 bg-blue-500">
+        <h1 class="text-black text-center ">US Bakery Finder</h1>
     </nav>
     <!-- whole dive under nav -->
-    <div class="containter grid grid-cols-2 gap-3">
+    <div class="containter main-columns">
         <!-- search column -->
-        <div class="container border border-green-500">
+        <div class="container col1">
             <!-- search bar -->
-            <div class="container border border-blue-500 grid grid-row-2">
+            <div class="container grid grid-row-2 border border-black rounded">
                 <div>
-                    <label for="city_search" class="text-gray-400 ">search a City</label>
+                    <label for="city_search" class="text-gray-400 pl-1 ">Search a City</label>
+                    <input type="text" name="" id="city_input" class="pt-2 pb-2">
                 </div>
-                <button class="bg-darkgreen-300 hover:bg-emerald-700 text-zinc-200	text-black px-4 py-2">search</button>
+                <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
+                    id="search_button">Search</button>
             </div>
-            <!-- searched history -->
-            <div class="container border border-pink-500">
-                <p>THIS SHOULD BE SEARCHED HISTORY THIS SHOULD BE SEARCHED HISTORY THIS SHOULD BE SEARCHED HISTORY THIS
-                    SHOULD BE SEARCHED HISTORY</p>
+            <!-- search history -->
+            <div class="container" id="search_history">
+
             </div>
+
+
         </div>
         <!-- information and map column -->
-        <div class="container border border-green-700 ">
-            <!-- search bar -->
-            <div class="container border border-blue-500">
-                <button>information</button>
-            </div>
+        <div class="container col2">
+
             <!-- searched history -->
-            <div class="container border border-pink-500">
+            <div class="container maparea" id="map">
                 <p>BIG OL MAPPY POO TO LOOK UP THE DANG RESTAURANTS.</p>
+            </div>
+            <!-- search bar (use js to fill in blanks)-->
+            <div class="container p-4 bg-amber-800 rounded" id="store_info">
+
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
