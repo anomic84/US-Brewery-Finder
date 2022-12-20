@@ -69,7 +69,7 @@ const options = {
     method: 'GET', 
     headers: { 
         accept: 'application/json', 
-        Authorization: 'Bearer' + yelpApiKey }
+        Authorization: 'Bearer ' + yelpApiKey }
 }
 // fetch is set to sort by best match, limit 20, search bakeries, radius of 5 miles, and location seattle (for now)
     fetch('https://api.yelp.com/v3/businesses/search?sort_by=best_match&limit=20&catagories=bakeries&radius=8050&location=seattle', options)
