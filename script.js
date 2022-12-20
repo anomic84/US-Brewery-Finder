@@ -5,25 +5,30 @@ const search = document.getElementById("search-button");
 
 
 
-var mapKey = "T0AABSUg4vasWZxGxVRqmARpHR0d3wJc"
 
 
-function map(input) {
-     input = $('#city_input').val().trim();
-     var queryURL="https://www.mapquestapi.com/search/v4/place?sort=distance&feedback=false&key=T0AABSUg4vasWZxGxVRqmARpHR0d3wJc";
-   
-     fetch(queryURL)
-       .then(function (response) {
-         return response.json();
-       })
-       .then(function (data) {
-         console.log(data);
-        
-          $("#map").append(input);
-   });
-
+//Bing maps
+const bingMapApi = "Al7OdiPyzEykkQtq9N0tfF2-85LosZCbAMvSxWxZ0nREKBqTififdRTwb_Zai0pK"
+const testCall = async function () {
+    var data = await fetchData('http://dev.virtualearth.net/REST/v1/Locations/1%20Microsoft%20Way%20Redmond%20WA%2098052?o=json&key=Al7OdiPyzEykkQtq9N0tfF2-85LosZCbAMvSxWxZ0nREKBqTififdRTwb_Zai0pK');
+    console.log(data)
 }
-search.addEventListener("click", map);
+
+async function fetchData(url) {
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        const message = `An error has occured: ${response.status}`;
+        throw new Error(message);
+    }
+
+    const json = await response.json();
+    return json;
+}
+testCall()
+
+// search.addEventListener("click", url);
 //Yelp Fusion API
 
 // API Key =
@@ -38,10 +43,10 @@ search.addEventListener("click", map);
 
 
 
-//Bing maps
+
 
 
 
 //Al7OdiPyzEykkQtq9N0tfF2-85LosZCbAMvSxWxZ0nREKBqTififdRTwb_Zai0pK
 
-https://spatial.virtualearth.net/REST/v1/data/a1b18b9f4d024416afd5643c2e1f6d4e/Bing/FourthCoffeeShops	
+// https://spatial.virtualearth.net/REST/v1/data/a1b18b9f4d024416afd5643c2e1f6d4e/Bing/FourthCoffeeShops	
