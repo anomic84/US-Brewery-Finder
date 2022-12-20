@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>git
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +12,19 @@
 </head>
 
 <body>
-    <nav class="nav   ">
-        <h1 class="text-center ">US Bakery Finder</h1>
+    <nav class="xl:container xl:mx-auto border border-yellow-500  w-full p-4 bg-blue-500 m-">
+        <h1 class="text-center text-2xl font-sans md:font-serif">US Bakery Finder</h1>
     </nav>
     <!-- whole dive under nav -->
-    <div class="containter">
+    <div class="xl:container xl:mx-auto  ">
         <!-- search column -->
         <div class="container  columns-2">
             <div class="container  ">
             <!-- search bar -->
             <div class="container grid grid-row-2 border border-black rounded">
                 <div>
-                    <label for="city_search" class="text-gray-400 pl-1 ">Search a City</label>
-                    <input type="text" name="" id="city_input" class="pt-2 pb-2">
+                    <label for="city_search" class="text-gray-400 pl-1 " ></label>
+                    <input type="text" name="" id="city_input" class="p-2" placeholder="Search a City">
                 </div>
                 <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
                     id="search_button">Search</button>
@@ -41,11 +41,17 @@
 
             <!-- searched history -->
             <div class="container maparea" id="map">
-                <p>BIG OL MAPPY POO TO LOOK UP THE DANG RESTAURANTS.</p>
+                <div>
+                    <iframe width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&cp=47.36161812160387~-122.596435546875&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+                    </iframe>
+                    <div style="white-space: nowrap; text-align: center; width: 500px; padding: 6px 0;">
+                        <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=47.36161812160387~-122.596435546875&amp;sty=r&amp;lvl=11&amp;FORM=MBEDLD">View Larger Map</a> &nbsp; | &nbsp;
+                        <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=47.36161812160387~-122.596435546875&amp;sty=r&amp;lvl=11&amp;rtp=~pos.47.36161812160387_-122.596435546875____&amp;FORM=MBEDLD">Get Directions</a>
+                    </div>
             </div>
             <!-- search bar (use js to fill in blanks)-->
             <div class="container p-4 bg-amber-800 rounded" id="store_info">
-
+    
             </div>
         </div>
     </div>
