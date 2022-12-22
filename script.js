@@ -13,6 +13,10 @@
 // We use data from yelp to display [name, address] by using .append and .createElement in JS
 // We might want to think about also affecting the CSS (either vanilla or tailwind) here
 
+
+
+
+
 // ----------------------------Consts, Vars, Lets---------------------------//
 const input = document.getElementById("city-input");
 const search = document.getElementById("search-button");
@@ -45,38 +49,29 @@ async function fetchData(url) {
 }
 testCall()
 
-// --------------------Fetch response as written by Yelp--------------------//
-const yelpApiKey = "XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx-rlpPg9iEsiwQmaiBTb-HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx"
-const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer ' + yelpApiKey,
-        Access- Control - Allow - Origin: 'https://api.yelp.com'
-    }
+
+
+// ----------------------------Brewery API Fetch---------------------------- //
+function fetchBreweries(city) {
+    fetch('https://api.openbrewerydb.org/breweries?by_city=' + city, {
+        method: 'GET',
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        });
 }
 
-function testYelp() {
-    var data = getYelpApiData('https://api.yelp.com/v3/businesses/search?sort_by=best_match&limit=20&catagories=bakeries&radius=8050&location=Seattle')
-    console.log(data)
-}
-
-// fetch is set to sort by best match, limit 20, search bakeries, radius of 5 miles, and location seattle (for now)
-function getYelpApiData() {
-    fetch('https://api.yelp.com/v3/businesses/search?sort_by=best_match&limit=20&catagories=bakeries&radius=8050&location=Seattle', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-}
-testYelp()
 
 // ---------------------------------Buttons---------------------------------//
 // Search button
 search.addEventListener("click", function () {
     // sets the city variable to whatever the person puts in the input ("city-input") defined at top
     var city = input.value
-    // getYelpApiData(city)
-    // fetchData(city)
+    console.log("works")
+    fetchBreweries(city)
     // --------if statement to disallow duplicates--------//
     if (searchHistory.indexOf(city.toLowerCase()) !== -1) {
         return
@@ -84,66 +79,4 @@ search.addEventListener("click", function () {
     searchHistory.push(city.toLowerCase())
     localStorage.setItem("search", JSON.stringify(searchHistory))
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// --------------------Yelp Fetch and API--------------------//
-// search.addEventListener("click", url)
-
-// API Key =
-//     XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx - rlpPg9iEsiwQmaiBTb - HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx
-
-// curl--request GET \
-// --url https://api.yelp.com/v3/events/awesome-event \
-// --header 'Authorization: Bearer XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx-rlpPg9iEsiwQmaiBTb-HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx' 
-// --header 'accept: application/json'
-
-
-// const aconfig = {
-//     method: "fetch",
-//     url: `https://api.yelp.com/v3/businesses/search?catagories=bakeries&radius=8050&location=seattle`
-//     header: 'Authorization: Bearer XrJ9PFPKIcRiTDcpixQl8_Kw3v00qbkA0sq9CUoJWDymks3sdpATOA9X7Kk2vrx-rlpPg9iEsiwQmaiBTb-HwAyHV8gfTOTzyu_0DHSuqnmVhRCC83MM_ZZ82vebY3Yx'
-// }
-// // this *should* be the right search. I've got bakeries set in the call, ~5 mile radius, and than the +city, where city = what user types in search ("catagories" might need to be "term" )
-// fetch(aconfig)
-// .then(response => response.json())
-// .then(response => console.log(response))
-// .catch(err => console.error(err));
-
-
-
-
-
-
-
-
-
 
