@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/input.css">
+    <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
     <title>Bakery Finder</title>
 </head>
@@ -16,18 +17,19 @@
         <h1 class="text-black text-center ">US Bakery Finder</h1>
     </nav>
     <!-- whole dive under nav -->
-    <div class="containter main-columns">
+    <div class="container main-columns">
         <!-- search column -->
-        <div class="container col1">
+        <div class="container grid grid-row-2 col1">
             <!-- search bar -->
-            <div class="container grid grid-row-2 border border-black rounded">
-                <div>
-                    <input type="text" name="" id="city-input" placeholder="Enter City Name" class="pt-2 pb-2">
-                    <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
-                        id="search-button">Search</button>
-                </div>
-
+            <!-- <div class="container border border-black rounded"> -->
+            <div class="grid grid-row-2">
+                <input type="text" name="" id="city-input" placeholder="Enter City Name"
+                    class=" pt-2 pb-2 border border-black rounded">
+                <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
+                    id="search-button">Search</button>
             </div>
+
+            <!-- </div> -->
             <!-- search history -->
             <div class="container" id="search_history">
 
@@ -36,11 +38,24 @@
 
         </div>
         <!-- information and map column -->
-        <div class="container col2">
+        <div class="container grid grid-row-2 col2 h-100">
+
+            <!-- searched history -->
+            <div class="container grid grid-row-2 h-100 maparea border border-black rounded" id="map">
+            </div>
+            <!-- search bar (use js to fill in blanks)-->
+            <div class="container p-4 bg-amber-800 grid grid-row-2 h-2/6 rounded" id="store_info">
+
+            </div>
+
         </div>
-        <!-- searched history -->
-        <div class="container maparea" id="map">
-            <!-- <div>
+    </div>
+
+
+
+
+
+    <!-- <div>
                 <iframe width="500" height="400" frameborder="0"
                     src="https://www.bing.com/maps/embed?h=400&w=500&cp=47.36161812160387~-122.596435546875&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                     scrolling="no">
@@ -54,12 +69,6 @@
                         Directions</a>
                 </div>
             </div> -->
-            <!-- search bar (use js to fill in blanks)-->
-            <div class="container p-4 bg-amber-800 rounded" id="store_info">
-
-            </div>
-        </div>
-    </div>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.2.js"
         integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
