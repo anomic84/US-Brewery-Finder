@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <nav class="border border-yellow-500  w-full p-4 bg-blue-300">
-        <h1 class="text-blue-900 text-4xl font-extrabold text-center ">US Bakery Finder</h1>
+    <nav class="border border-yellow-500  w-full p-4 bg-blue-500">
+        <h1 class="text-black text-center ">US Bakery Finder</h1>
     </nav>
     <!-- whole dive under nav -->
     <div class="container main-columns">
@@ -29,11 +29,12 @@
                 <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
                     id="search-button">Search</button>
 
-            <div class="container grid grid-row-2 border border-black rounded">
+            <!--<div class="container grid grid-row-2 border border-black rounded">
                 <div>
-                    <label for="city_search" class="text-gray-400 pl-1 ">Search a City</label>
-                    <input type="text" name="" id="city_input" class="pt-2 pb-2">
-                </div>
+                    <input type="text" name="" id="city-input" placeholder="Enter City Name" class="pt-2 pb-2">
+                    <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
+                        id="search-button">Search</button>
+                </div> -->
 
 
             </div>
@@ -58,9 +59,13 @@
             </div>
 
         </div>
-        <!-- searched history -->
-        <div class="container maparea" id="map">
-            <!-- <div>
+    </div>
+
+
+
+
+
+    <!-- <div>
                 <iframe width="500" height="400" frameborder="0"
                     src="https://www.bing.com/maps/embed?h=400&w=500&cp=47.36161812160387~-122.596435546875&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                     scrolling="no">
