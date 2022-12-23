@@ -32,9 +32,9 @@ L.mapquest.key = 'T0AABSUg4vasWZxGxVRqmARpHR0d3wJc';
 
 // 'map' refers to a <div> element with the ID map
 L.mapquest.map('map', {
-  center: [37.7749, -122.4194],
-  layers: L.mapquest.tileLayer('map'),
-  zoom: 12
+    center: [37.7749, -122.4194],
+    layers: L.mapquest.tileLayer('map'),
+    zoom: 12
 });
 // continuous test, need to recode to make it availbe on click, according to which city user searches
 const testCall = async function () {
@@ -93,9 +93,9 @@ function fetchBreweries(city) {
         });
 
 }
-function showInfo(event) {
+function showInfo(event) { }
 
-    // console.log("info shown")
+// console.log("info shown")
 
 
 
@@ -119,4 +119,4 @@ search.addEventListener("click", function () {
     localStorage.setItem("search", JSON.stringify(searchHistory))
 })
 
-}
+
