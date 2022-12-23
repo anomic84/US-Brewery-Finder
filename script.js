@@ -21,6 +21,7 @@
 const input = document.getElementById("city-input");
 const search = document.getElementById("search-button");
 // add a clear history button here after we get MVP
+const storeList = document.getElementById("store-list")
 
 
 
@@ -61,11 +62,35 @@ function fetchBreweries(city) {
         })
         .then(function (data) {
             console.log(data);
+
+            for (let i = 0; i < data.length; i++) {
+                const brewery = document.createElement("li");
+                brewery.classList.add("brewerylistitem")
+                brewery.textContent = (data[i].name)
+                brewery.setAttribute("data-address", data[i].street + " " + data[i].city + " " + data[i].state)
+                // data.street + data.city + data.state.setattribute()
+                storeList.append(brewery)
+
+                storeList.onclick = showInfo
+            }
+
         });
 
+}
+function showInfo(event) {
+
+    // console.log("info shown")
 
 }
+
+
+//---------------------------Return List of names--------------------------//
+
+
+
 // 
+
+
 
 // ---------------------------------Buttons---------------------------------//
 // Search button
