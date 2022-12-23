@@ -22,6 +22,9 @@ const input = document.getElementById("city-input");
 const search = document.getElementById("search-button");
 // add a clear history button here after we get MVP
 const storeList = document.getElementById("store-list")
+const info = document.getElementById("store-info")
+// Brewery Fetch API saved into code to access whenever
+let BrewApiData = []
 
 
 
@@ -78,22 +81,37 @@ function fetchBreweries(city) {
         })
         .then(function (data) {
             console.log(data);
+            BrewApiData = data;
 
             for (let i = 0; i < data.length; i++) {
                 const brewery = document.createElement("li");
                 brewery.classList.add("brewerylistitem")
                 brewery.textContent = (data[i].name)
-                brewery.setAttribute("data-address", data[i].street + " " + data[i].city + " " + data[i].state)
+                // brewery.setAttribute("data-address", data[i].street + " " + data[i].city + " " + data[i].state)
+                brewery.setAttribute('data-index', i)
                 // data.street + data.city + data.state.setattribute()
                 storeList.append(brewery)
-
                 storeList.onclick = showInfo
             }
 
         });
 
 }
-function showInfo(event) { }
+function showInfo(event) {
+    const breweryIndex = event.target.getAttribute('data-index')
+    // This line sets a number for array, now we call this instead of response
+    const breweryNum = BrewApiData[breweryIndex]
+
+    var breweryName = document.createElement("h1")
+    breweryName.innerHTML = breweryNum.name
+    info.append(breweryName)
+
+    var breweryAddy = document.createElement("h4")
+    breweryAddy.innerHTML = breweryNum.street
+    info.append(breweryAddy)
+    // console.log(breweryIndex)
+    // console.log(BrewApiData[breweryIndex])
+}
 
 // console.log("info shown")
 
@@ -109,7 +127,7 @@ function showInfo(event) { }
 search.addEventListener("click", function () {
     // sets the city variable to whatever the person puts in the input ("city-input") defined at top
     var city = input.value
-    console.log("works")
+    console.log("search button works")
     fetchBreweries(city)
     // --------if statement to disallow duplicates--------//
     if (searchHistory.indexOf(city.toLowerCase()) !== -1) {

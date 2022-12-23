@@ -1,4 +1,14 @@
 /* display for the two main columns  */
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.col2 {
+    width: 100%;
+}
+
 .main-columns {
     display: grid;
     /* gives width property to the first two columns, if we add another column, we need to add another "x"fr. fr =fractional units */
@@ -7,10 +17,21 @@
 
 
 .brewerylistitem {
-    color:
+    color: black;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.brewerylistitem:hover {
+    color: darkslategray;
+}
+
+.store-info {
+    height: 75px;
+    width: 100%;
 }
 
 #map {
     height: 600px;
-    width: 600px;
+    width: 100%;
 }
