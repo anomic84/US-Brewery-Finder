@@ -5,6 +5,11 @@
     grid-template-columns: 1fr 2fr;
 }
 
+
 .brewerylistitem {
     color: 
+
+#map {
+    height: 600px;
+    width: 600px;
 }

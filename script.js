@@ -27,11 +27,18 @@ const storeList = document.getElementById("store-list")
 
 
 
-// ---------------------------BING Fetch and Api----------------------------//
-const bingMapApi = "Al7OdiPyzEykkQtq9N0tfF2-85LosZCbAMvSxWxZ0nREKBqTififdRTwb_Zai0pK"
+// ---------------------------MapQuest Fetch and Api----------------------------//
+L.mapquest.key = 'T0AABSUg4vasWZxGxVRqmARpHR0d3wJc';
+
+// 'map' refers to a <div> element with the ID map
+L.mapquest.map('map', {
+  center: [37.7749, -122.4194],
+  layers: L.mapquest.tileLayer('map'),
+  zoom: 12
+});
 // continuous test, need to recode to make it availbe on click, according to which city user searches
 const testCall = async function () {
-    var data = await fetchData('http://dev.virtualearth.net/REST/v1/Locations/1%20Microsoft%20Way%20Redmond%20WA%2098052?o=json&key=Al7OdiPyzEykkQtq9N0tfF2-85LosZCbAMvSxWxZ0nREKBqTififdRTwb_Zai0pK');
+    var data = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${input}&size=@2x&defaultMarker=marker-md-3B5998-22407F&key=T0AABSUg4vasWZxGxVRqmARpHR0d3wJc`);
     console.log(data)
 }
 
@@ -48,7 +55,16 @@ async function fetchData(url) {
     const json = await response.json();
     return json;
 }
+
 testCall()
+
+
+
+
+// if(data.resourceSets && data.resourceSets.length > 0 && data.resourceSets[0].resources && data.resourceSets[0].resources.length > 0){
+//     var firstResult =  data.resourceSets[0].resources[0];
+//     var latitude = firstResult.point.coordinates[0];
+//     var longitude = firstResult.point.coordinates[1];
 
 
 
@@ -81,14 +97,10 @@ function showInfo(event) {
 
     // console.log("info shown")
 
-}
 
 
 //---------------------------Return List of names--------------------------//
 
-
-
-// 
 
 
 
@@ -107,3 +119,4 @@ search.addEventListener("click", function () {
     localStorage.setItem("search", JSON.stringify(searchHistory))
 })
 
+}
