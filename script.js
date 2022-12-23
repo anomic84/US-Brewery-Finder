@@ -64,9 +64,6 @@ function fetchBreweries(city) {
         });
 
 
-}
-// 
-
 // ---------------------------------Buttons---------------------------------//
 // Search button
 search.addEventListener("click", function () {
