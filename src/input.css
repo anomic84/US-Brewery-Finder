@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* display for the two main columns  */
-.main-columns {
-    display: grid;
-    /* gives width property to the first two columns, if we add another column, we need to add another "x"fr. fr =fractional units */
-    grid-template-columns: 1fr 2fr;
-}
+
 
 .col1 {}

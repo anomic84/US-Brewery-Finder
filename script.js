@@ -62,7 +62,6 @@ function fetchBreweries(city) {
         .then(function (data) {
             console.log(data);
         });
-}
 
 
 // ---------------------------------Buttons---------------------------------//
