@@ -4,3 +4,12 @@
     /* gives width property to the first two columns, if we add another column, we need to add another "x"fr. fr =fractional units */
     grid-template-columns: 1fr 2fr;
 }
+
+
+.brewerylistitem {
+    color: 
+}
+#map {
+    height: 600px;
+    width: 600px;
+}

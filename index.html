@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <link rel="stylesheet" href="/src/input.css">
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
@@ -29,12 +31,7 @@
                 <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
                     id="search-button">Search</button>
 
-            <!--<div class="container grid grid-row-2 border border-black rounded">
-                <div>
-                    <input type="text" name="" id="city-input" placeholder="Enter City Name" class="pt-2 pb-2">
-                    <button class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 rounded"
-                        id="search-button">Search</button>
-                </div> -->
+                </div>
 
 
             </div>
@@ -54,8 +51,8 @@
             <div class="container grid grid-row-2 h-100 maparea border border-black rounded" id="map">
             </div>
             <!-- search bar (use js to fill in blanks)-->
-            <div class="container p-4 bg-amber-800 grid grid-row-2 h-2/6 rounded" id="store_info">
-
+            <div class="container p-4 bg-amber-800 grid grid-row-2 h-2/6 rounded">
+                <ul id="store-list"></ul>
             </div>
 
         </div>
@@ -64,8 +61,8 @@
 
 
 
-
-    <!-- <div>
+<!--
+    <div>
                 <iframe width="500" height="400" frameborder="0"
                     src="https://www.bing.com/maps/embed?h=400&w=500&cp=47.36161812160387~-122.596435546875&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
                     scrolling="no">
@@ -77,9 +74,9 @@
                     <a id="dirMapLink" target="_blank"
                         href="https://www.bing.com/maps/directions?cp=47.36161812160387~-122.596435546875&amp;sty=r&amp;lvl=11&amp;rtp=~pos.47.36161812160387_-122.596435546875____&amp;FORM=MBEDLD">Get
                         Directions</a>
-                </div>
-            </div> -->
-    <script src="script.js"></script>
+                </div> -->
+            </div> 
+    <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.2.js"
         integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
 </body>
