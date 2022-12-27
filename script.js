@@ -22,45 +22,30 @@ const input = document.getElementById("city-input");
 const search = document.getElementById("search-button");
 // add a clear history button here after we get MVP
 const storeList = document.getElementById("store-list")
+const info = document.getElementById("store-info")
+// Brewery Fetch API saved into code to access whenever
+let BrewApiData = [];
+let coord = '';
 
 
 
 
 
 // ---------------------------MapQuest Fetch and Api----------------------------//
-L.mapquest.key = 'T0AABSUg4vasWZxGxVRqmARpHR0d3wJc';
+function mapSearch(lat, lon) {
+    L.mapquest.key = 'T0AABSUg4vasWZxGxVRqmARpHR0d3wJc';
 
-// 'map' refers to a <div> element with the ID map
-L.mapquest.map('map', {
-  center: [37.7749, -122.4194],
-  layers: L.mapquest.tileLayer('map'),
-  zoom: 12
-});
-// continuous test, need to recode to make it availbe on click, according to which city user searches
-const testCall = async function () {
-    var data = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${input}&size=@2x&defaultMarker=marker-md-3B5998-22407F&key=T0AABSUg4vasWZxGxVRqmARpHR0d3wJc`);
-    console.log(data)
+    // 'map' refers to a <div> element with the ID map
+    L.mapquest.map('map', {
+        center: [lat, lon],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 12
+    });
 }
+// mapSearch(47.6062, -122.3321)
+// ---------------------------Eventbrite Fetch and Api----------------------------//
 
-// Async Funtion given by Bing, Casey (TA) explained how these work and says its ok to use
-async function fetchData(url) {
-
-    const response = await fetch(url);
-
-    if (!response.ok) {
-        const message = `An error has occured: ${response.status}`;
-        throw new Error(message);
-    }
-
-    const json = await response.json();
-    return json;
-}
-
-testCall()
-
-
-
-
+EBKey = "TME6JCRRODRLCGDTOGD4"
 // if(data.resourceSets && data.resourceSets.length > 0 && data.resourceSets[0].resources && data.resourceSets[0].resources.length > 0){
 //     var firstResult =  data.resourceSets[0].resources[0];
 //     var latitude = firstResult.point.coordinates[0];
@@ -78,24 +63,48 @@ function fetchBreweries(city) {
         })
         .then(function (data) {
             console.log(data);
+            BrewApiData = data;
 
             for (let i = 0; i < data.length; i++) {
                 const brewery = document.createElement("li");
                 brewery.classList.add("brewerylistitem")
                 brewery.textContent = (data[i].name)
-                brewery.setAttribute("data-address", data[i].street + " " + data[i].city + " " + data[i].state)
+                // brewery.setAttribute("data-address", data[i].street + " " + data[i].city + " " + data[i].state)
+                brewery.setAttribute('data-index', i)
                 // data.street + data.city + data.state.setattribute()
                 storeList.append(brewery)
-
                 storeList.onclick = showInfo
             }
 
         });
 
 }
-function showInfo(event) {}
+function showInfo(event) {
+   //clears the info section before putting in the new address when clicked.
+   info.innerHTML = "";
 
-    // console.log("info shown")
+   const breweryIndex = event.target.getAttribute('data-index')
+   // This line sets a number for array, now we call this instead of response
+   const breweryNum = BrewApiData[breweryIndex]
+
+   //Name
+   var breweryName = document.createElement("h1")
+   breweryName.innerHTML = breweryNum.name
+   info.append(breweryName)
+   //Address
+   var breweryAddy = document.createElement("h4")
+   breweryAddy.innerHTML = breweryNum.street + " " + breweryNum.city + ", " + breweryNum.state
+   info.append(breweryAddy)
+   //phone number
+   var breweryPhone = document.createElement("h4")
+   breweryPhone.innerHTML = breweryNum.phone
+   info.append(breweryPhone)
+   // console.log(breweryIndex)
+   // console.log(BrewApiData[breweryIndex])
+   mapSearch(breweryNum.latitude, breweryNum.longitude)
+}
+ 
+// console.log("info shown")
 
 
 
@@ -109,13 +118,12 @@ function showInfo(event) {}
 search.addEventListener("click", function () {
     // sets the city variable to whatever the person puts in the input ("city-input") defined at top
     var city = input.value
-    console.log("works")
+    console.log("search button works")
     fetchBreweries(city)
     // --------if statement to disallow duplicates--------//
-    if (searchHistory.indexOf(city.toLowerCase()) !== -1) {
-        return
-    }
-    searchHistory.push(city.toLowerCase())
-    localStorage.setItem("search", JSON.stringify(searchHistory))
-})
-
+   // if (searchHistory.indexOf(city.toLowerCase()) !== -1) {
+    //    return
+    //}
+    //searchHistory.push(city.toLowerCase())
+    //localStorage.setItem("search", JSON.stringify(searchHistory))
+});
