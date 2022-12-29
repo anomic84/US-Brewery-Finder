@@ -1,8 +1,24 @@
 /* display for the two main columns  */
+
+:root {
+    --lightbrown: antiquewhite;
+    --darkgray: #808080;
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+body {
+    background-image: url("./assets/vecteezyBeerDayBackgroundfv0621_generated.jpg");
+    background-size: cover;
+}
+
+.title {
+    font-size: 40px;
 }
 
 .col2 {
@@ -23,15 +39,26 @@ body {
 }
 
 .brewerylistitem:hover {
-    color: darkslategray;
+    color: var(--darkgray);
 }
 
 .store-info {
     height: 75px;
     width: 100%;
+    font-weight: bold;
 }
 
 #map {
     height: 600px;
     width: 100%;
+}
+
+.info-store h1 {
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+
+.info-store p {
+    font-size: 15px;
+    background-color: antiquewhite;
 }

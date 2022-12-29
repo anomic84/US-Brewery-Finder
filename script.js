@@ -24,36 +24,8 @@ const search = document.getElementById("search-button");
 const storeList = document.getElementById("store-list")
 const info = document.getElementById("store-info")
 // Brewery Fetch API saved into code to access whenever
-let coord = ""
-let BrewApiData = []
-
-
-
-
-
-// ---------------------------MapQuest Fetch and Api----------------------------//
-function mapSearch(lat, lon) {
-    L.mapquest.key = 'T0AABSUg4vasWZxGxVRqmARpHR0d3wJc';
-
-    // 'map' refers to a <div> element with the ID map
-    L.mapquest.map('map', {
-        center: [lat, lon],
-        layers: L.mapquest.tileLayer('map'),
-        zoom: 12
-    });
-}
-// mapSearch(47.6062, -122.3321)
-// ---------------------------Eventbrite Fetch and Api----------------------------//
-
-EBKey = "TME6JCRRODRLCGDTOGD4"
-
-
-// if(data.resourceSets && data.resourceSets.length > 0 && data.resourceSets[0].resources && data.resourceSets[0].resources.length > 0){
-//     var firstResult =  data.resourceSets[0].resources[0];
-//     var latitude = firstResult.point.coordinates[0];
-//     var longitude = firstResult.point.coordinates[1];
-
-
+// let coord = "";
+let BrewApiData = [];
 
 // ----------------------------Brewery API Fetch---------------------------- //
 function fetchBreweries(city) {
@@ -94,19 +66,16 @@ function showInfo(event) {
     breweryName.innerHTML = breweryNum.name
     info.append(breweryName)
     //Address
-    var breweryAddy = document.createElement("h4")
+    var breweryAddy = document.createElement("p")
     breweryAddy.innerHTML = breweryNum.street + " " + breweryNum.city + ", " + breweryNum.state
     info.append(breweryAddy)
     //phone number
-    var breweryPhone = document.createElement("h4")
+    var breweryPhone = document.createElement("p")
     breweryPhone.innerHTML = breweryNum.phone
     info.append(breweryPhone)
-    // console.log(breweryIndex)
-    // console.log(BrewApiData[breweryIndex])
-    mapSearch(breweryNum.latitude, breweryNum.longitude)
+
 }
 
-// console.log("info shown")
 
 
 
@@ -131,36 +100,45 @@ search.addEventListener("click", function () {
 })
 
 
-// defaultMarker=marker-md-3B5998-22407F&
+function mapDots(city) {
+    L.mapquest.key = 'ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7';
+    var baseLayer = L.mapquest.tileLayer('map');
+
+    var map = L.mapquest.map('map', {
+        center: L.latLng(-37.82, 175.24),
+        layers: baseLayer,
+        zoom: 13
+    });
+    fetch('https://api.openbrewerydb.org/breweries?by_city=' + city, {
+        method: 'GET',
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            BrewApiData = data;
+            // Chrissy ask about this with tutor  
+            // we need addressPoints to equal array like:  [lon, lat, i+1] (i+1 so there is no marker saying 0)
+
+            var addressPoints = BrewApiData[]
 
 
+            var markers = L.markerClusterGroup();
 
+            for (var i = 0; i < addressPoints.length; i++) {
+                var addressPoint = addressPoints[i];
+                var title = addressPoint[2];
+                var marker = L.marker(new L.LatLng(addressPoint[0], addressPoint[1]), {
+                    title: title,
+                    icon: L.mapquest.icons.marker()
+                });
+                marker.bindPopup(title);
+                markers.addLayer(marker);
+            }
 
+            map.addLayer(markers);
+        })
+}
 
-
-
-
-
-
-// continuous test, need to recode to make it availbe on click, according to which city user searches
-// const testCall = async function () {
-//     coord = "40.039401,-76.307078"
-//     var data = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${coord}&defaultMarker=marker-md-3B5998-22407F&size=@2x&key=T0AABSUg4vasWZxGxVRqmARpHR0d3wJc`);
-//     console.log(data)
-// }
-
-// // Async Funtion given by Bing, Casey (TA) explained how these work and says its ok to use
-// async function fetchData(url) {
-
-//     const response = await fetch(url);
-
-//     if (!response.ok) {
-//         const message = `An error has occured: ${response.status}`;
-//         throw new Error(message);
-//     }
-
-//     const json = await response.json();
-//     return json;
-// }
-
-// testCall()
+mapDots()
