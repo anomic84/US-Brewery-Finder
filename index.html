@@ -8,8 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.css"/>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.markercluster@1.0.6/dist/leaflet.markercluster.js"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.css" />
+    <link type="text/css" rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="/src/input.css">
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
@@ -17,8 +20,8 @@
 </head>
 
 <body>
-    <nav class="border border-yellow-500  w-screen p-4 bg-blue-500">
-        <h1 class="text-black text-center ">US Brewery Finder</h1>
+    <nav class="border border-amber-800 border-4 w-screen p-4 bg-blue-400">
+        <h1 class="text-amber-200 text-center title">US Brewery Finder</h1>
     </nav>
     <!-- whole dive under nav -->
     <div class="container w-full main-columns">
@@ -29,9 +32,9 @@
             <!-- <div class="container border border-black rounded"> -->
             <div class="">
                 <input type="text" name="searchbutton" id="city-input" placeholder="Enter City Name"
-                    class=" pt-2 pb-2 border border-black grid grid-row-1 w-full rounded">
-                <button
-                    class="bg-emerald-900 hover:bg-emerald-700 text-blue-200 px-4 py-2 grid grid-row-1 w-full rounded"
+                    class=" pt-2 pb-2 border border-amber-800 border-4 grid grid-row-1 w-full rounded">
+
+                <button class="bg-amber-800 hover:bg-amber-600 text-blue-200 px-4 py-2 grid grid-row-1 w-full rounded"
                     for="searchbutton" id="search-button">Search</button>
             </div>
 
@@ -50,7 +53,7 @@
             <div class="container grid grid-row-2 h-100 maparea border border-black rounded" id="map">
             </div>
             <!-- Brewery Info-->
-            <div class="container p-4 bg-amber-800 grid grid-row-2  rounded" id="store-info">
+            <div class="container info-store p-4 bg-amber-800 grid grid-row-2  rounded" id="store-info">
 
             </div>
             <div>
