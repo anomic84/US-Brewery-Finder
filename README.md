@@ -16,7 +16,7 @@ An app that lets users find breweries in searched city, as well as their locatio
 [US Brewery Finder](https://anomic84.github.io/US-Brewery-Finder/)
 
 ## Screenshots
-![Brewery Finder Screenshot](USBreweryFinder.png)
+[Brewery Finder Screenshot](USBreweryFinder.png)
 
 ## Credits
 [Yuri Kwon](https://github.com/uriyuri00)
