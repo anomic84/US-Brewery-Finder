@@ -116,7 +116,7 @@ function showInfo(event) {
 search.addEventListener("click", function () {
   // sets the city variable to whatever the person puts in the input ("city-input") defined at top
   var city = input.value;
-  console.log("search button works");
+//   console.log("search button works");
   fetchBreweries(city);
   // --------if statement to disallow duplicates--------//
   // if (searchHistory.indexOf(city.toLowerCase()) !== -1) {
