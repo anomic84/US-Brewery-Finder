@@ -6,11 +6,9 @@ Javascript Brewery Finder in US Cities
 * [Website](#webpage-URL)
 * [Screenshots](#screenshots)
 * [Credit](#credits)
-
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+* [Built with](#built-with)
+* [Continued development](#continued-development)
+* [Useful resources](#useful-resources)
 
 ## General info
 
