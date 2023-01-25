@@ -47,8 +47,8 @@ Right now the Brewmaster API, when given a city, searches and returns ALL cities
 
 ## Credits
 
-[Yuri Kwon](https://github.com/uriyuri00)
-[Chrissy Martin](https://github.com/chrissy-martin)
-[Spencer Carlson](https://github.com/anomic84)
+[Yuri Kwon](https://github.com/uriyuri00)<br>
+[Chrissy Martin](https://github.com/chrissy-martin)<br>
+[Spencer Carlson](https://github.com/anomic84)<br>
 
 
