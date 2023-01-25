@@ -18,9 +18,9 @@ When the user searches a US city, this app will respond with a list of breweries
 
 ## User Story
 
-> As a consumer looking for breweries
-> When I use this application
-> I will be presented with a list and map of all local breweries in the US city that I search
+> <p>As a consumer looking for breweries<br>
+> When I use this application<br>
+> I will be presented with a list and map of all local breweries in the US city that I search</p>
 
 
 ## Website
