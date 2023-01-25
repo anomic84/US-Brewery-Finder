@@ -9,11 +9,11 @@ Javascript Brewery Finder in US Cities
 
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 
 ## General info
+
 When the user searches a US city, this app will respond with a list of breweries in that city as well as their address and phone number. It will also show locations on the map.
 
 ## User Story
@@ -24,10 +24,19 @@ When the user searches a US city, this app will respond with a list of breweries
 
 
 ## Website
+
 [US Brewery Finder](https://anomic84.github.io/US-Brewery-Finder/)
 
 ## Screenshots
+
 ![Brewery Finder Screenshot](USBreweryFinder.png)
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Tailwind CSS
 
 ### Continued development
 
@@ -38,14 +47,8 @@ Right now the Brewmaster API, when given a city, searches and returns ALL cities
 - [Open Brewery Database API](https://www.example.com](https://www.openbrewerydb.org/documentation) - Here are the Docs for the Open Brewery Database API
 - [Mapquest API]([https://www.example.com](https://developer.mapquest.com/documentation/)) - Here are the Docs for the Mapquest API
 
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Tailwind CSS
-
 ## Credits
+
 [Yuri Kwon](https://github.com/uriyuri00)
 [Chrissy Martin](https://github.com/chrissy-martin)
 [Spencer Carlson](https://github.com/anomic84)
