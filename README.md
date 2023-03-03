@@ -42,7 +42,7 @@ Right now the Brewmaster API, when given a city, searches and returns ALL cities
 
 ### Useful resources
 
-- [Open Brewery Database API](https://www.example.com](https://www.openbrewerydb.org/documentation) - Here are the Docs for the Open Brewery Database API
+- [Open Brewery Database API]([https://www.openbrewerydb.org/documentation]) - Here are the Docs for the Open Brewery Database API
 - [Mapquest API]([https://www.example.com](https://developer.mapquest.com/documentation/)) - Here are the Docs for the Mapquest API
 
 ## Credits
