@@ -1,5 +1,5 @@
 # US Brewery Finder
-Javascript Brewery Finder in US Cities
+Javascript Brewery Finder of all US cities.
 
 ## Table of contents
 * [General info](#general-info)
