@@ -1,5 +1,4 @@
 # US Brewery Finder
-Javascript Brewery Finder of all US cities.
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,7 +11,7 @@ Javascript Brewery Finder of all US cities.
 
 ## General info
 
-When the user searches a US city, this app will respond with a list of breweries in that city as well as their address and phone number. It will also show locations on the map.
+When the user searches a US city, this app will respond with a list of breweries (from OpenBreweryDB) in that city as well as their address and phone number. It will also show locations on the map.
 
 ## User Story
 
@@ -35,6 +34,7 @@ When the user searches a US city, this app will respond with a list of breweries
 - CSS custom properties
 - Flexbox
 - Tailwind CSS
+- Third party APIs
 
 ### Continued development
 
